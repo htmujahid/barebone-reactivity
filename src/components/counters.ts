@@ -10,7 +10,7 @@ export function Counters() {
     div.style.display = 'flex'
     div.style.gap = '1rem'
     div.style.flexWrap = 'wrap'
-    // div.style.justifyContent = 'space-between'
+    div.style.justifyContent = 'space-between'
 
     div.appendChild(new CounterButton().get())
     div.appendChild(new CounterButton().get())

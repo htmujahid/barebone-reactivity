@@ -35,7 +35,7 @@ function highlightDomChanges(targetNode: HTMLElement, config = { childList: true
         added: "2px solid #4CAF50", // green border for added elements
         removed: "2px solid #F44336", // red border for removed elements
         attributeChanged: "2px solid #FFEB3B", // yellow border for attribute changes
-        textChanged: "2px dashed #2196F3" // blue dashed border for text changes
+        textChanged: "2px dashed #FF9800" // blue dashed border for text changes
       };
 
       const HIGHLIGHT_DURATION = 3000; // 3 seconds
@@ -56,6 +56,7 @@ function highlightDomChanges(targetNode: HTMLElement, config = { childList: true
           }
         });
       } else if (mutation.type === "attributes") {
+        if (changedElement === document.body) return;
         (changedElement as HTMLElement).style.border = highlightStyles.attributeChanged;
         setTimeout(() => { (changedElement as HTMLElement).style.border = ""; }, HIGHLIGHT_DURATION);
       } else if (mutation.type === "characterData" && mutation.target.nodeType === Node.TEXT_NODE) {
