@@ -36,19 +36,16 @@ export class CounterStateComponent extends StateComponent {
 
     article.appendChild(div)
 
-    buttonIncrement.onclick = () => this.counter.value++
-    buttonDecrement.onclick = () => this.counter.value--
-
     return article
   }
 
-  // script() {
-  //   const increment = this.incrementRef.current
-  //   const decrement = this.decrementRef.current
+  script() {
+    const increment = this.incrementRef.current
+    const decrement = this.decrementRef.current
 
-  //   if (!increment || !decrement) return
+    if (!increment || !decrement) return
 
-  //   increment.onclick = () => this.counter.value++
-  //   decrement.onclick = () => this.counter.value--
-  // }
+    increment.onclick = () => this.counter.value++
+    decrement.onclick = () => this.counter.value--
+  }
 }
